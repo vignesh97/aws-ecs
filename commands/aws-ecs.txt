@@ -1,0 +1,9 @@
+aws ec2 describe-instance-status --instance-id i-041f9139c13358b31
+
+aws ec2 run-instances --image-id ami-28456852 --count 1 --instance-type t2.micro --iam-instance-profile Name=ecsInstanceRole --key-name DDBCourse --security-group-ids sg-fe2fa18a --user-data file://copy-ecs-config-to-s3
+
+aws ec2 describe-instance-status --instance-id i-041f9139c13358b31
+
+aws ecs list-container-instances
+
+aws ecs list-container-instances --cluster deepdive
