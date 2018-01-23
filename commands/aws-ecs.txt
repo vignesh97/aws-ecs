@@ -20,3 +20,20 @@ aws ecs create-service --cluster deepdive --service-name web --task-definition w
 aws ecs list-services --cluster deepdive
 
 aws ecs describe-services --cluster deepdive --services web
+
+aws ecs update-service --cluster deepdive --service web --task-definition web --desired-count 2
+
+
+#Running as Task instead of services
+
+aws ecs run-task --cluster deepdive --task-definition web --count 1
+
+aws ecs list-tasks --cluster deepdive
+
+aws ecs stop-task --cluster deepdive --task {ARN}
+
+aws ecs list-container-instances --cluster deepdive
+
+aws ecs start-task --cluster deepdive --task-definition web --container-instances {Container ARN}
+
+aws ecs stop-task --cluster deepdive --task {ARN}
