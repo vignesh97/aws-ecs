@@ -37,3 +37,27 @@ aws ecs list-container-instances --cluster deepdive
 aws ecs start-task --cluster deepdive --task-definition web --container-instances {Container ARN}
 
 aws ecs stop-task --cluster deepdive --task {ARN}
+
+#ECR
+
+aws ecr get-login
+
+aws ecr create-repository --repository-name deepdive/nginx
+
+aws ecr describe-repositories
+
+aws ecr list-images --repository-name deepdive/nginx
+
+docker pull nginx:1.9
+
+docker tag nginx:1.9 AWSREPOURL
+
+ docker tag nginx:1.9 {ACOUNTID}.dkr.ecr.us-east-1.amazonaws.com/deepdive/nginx:1.9
+
+ docker push {ACOUNTID}.dkr.ecr.us-east-1.amazonaws.com/deepdive/nginx
+
+ aws ecr list-images --repository-name deepdive/nginx
+
+ aws ecs register-task-definition --cli-input-json file://web-task-definition.json
+
+ aws ecs run-task --cluster deepdive --task-definition web --count 1
