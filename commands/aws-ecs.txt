@@ -6,4 +6,6 @@ aws ec2 describe-instance-status --instance-id i-041f9139c13358b31
 
 aws ecs list-container-instances
 
-aws ecs list-container-instances --cluster deepdive
+aws ecs describe-container-instances --cluster deepdive --container-instances arn:aws:ecs:us-east-1:018670487324:container-instance/4b291d70-e935-44c5-9c7e-f23fa6b64df5
+
+aws ecs register-task-definition --cli-input-json file://web-task-definition.json
