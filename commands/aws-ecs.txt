@@ -61,3 +61,12 @@ docker tag nginx:1.9 AWSREPOURL
  aws ecs register-task-definition --cli-input-json file://web-task-definition.json
 
  aws ecs run-task --cluster deepdive --task-definition web --count 1
+
+
+#Terminate
+
+aws ec2 terminate-instances --instance-ids i-041f9139c13358b31
+
+aws ecr delete-repository --repository-name deepdive/nginx --force
+
+aws ecs delete-cluster --cluster deepdive
