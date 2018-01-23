@@ -1,0 +1,20 @@
+docker run --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app rails:4 rails new --skip-bundle dockerzon
+
+docker images
+
+dcoker rmi -f {IMAGEID}
+
+docker-compose up
+
+docker volume ls
+
+docker network ls
+
+https://s3.amazonaws.com/acloud-content-public/aws-ecs/resources/5-running-the-application-locally.pdf
+
+https://s3.amazonaws.com/acloud-content-public/aws-ecs/resources/5-working-with-the-application.pdf
+
+
+http://54.209.98.92:8000/pages/home
+
+http://54.209.98.92:8000/pages/home
