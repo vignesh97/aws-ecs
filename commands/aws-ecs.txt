@@ -9,3 +9,14 @@ aws ecs list-container-instances
 aws ecs describe-container-instances --cluster deepdive --container-instances arn:aws:ecs:us-east-1:018670487324:container-instance/4b291d70-e935-44c5-9c7e-f23fa6b64df5
 
 aws ecs register-task-definition --cli-input-json file://web-task-definition.json
+
+aws ecs list-task-definitions
+
+aws ecs describe-task-definition --task-definition web:1
+
+
+aws ecs create-service --cluster deepdive --service-name web --task-definition web --desired-count 1
+
+aws ecs list-services --cluster deepdive
+
+aws ecs describe-services --cluster deepdive --services web
